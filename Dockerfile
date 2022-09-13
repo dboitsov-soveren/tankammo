@@ -13,6 +13,10 @@ LABEL Description="Fresh Yandex.Tank from github master branch with phantom" \
 VOLUME ["/var/loadtest"]
 WORKDIR /var/loadtest
 
-RUN  wget https://github.com/dboitsov-soveren/tankammo/blob/main/ammo_huge.txt
-    
+RUN  wget https://raw.githubusercontent.com/dboitsov-soveren/tankammo/main/ammoHugeTraffic.txt && \
+    wget https://raw.githubusercontent.com/dboitsov-soveren/tankammo/main/ammoRPS.txt && \
+    wget https://raw.githubusercontent.com/dboitsov-soveren/tankammo/main/load.yaml && \
+    wget https://raw.githubusercontent.com/dboitsov-soveren/tankammo/main/loadHuge.yaml && \
+    wget https://raw.githubusercontent.com/dboitsov-soveren/tankammo/main/token.txt 
+        
 ENTRYPOINT ["/usr/local/bin/yandex-tank"]

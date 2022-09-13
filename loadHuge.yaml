@@ -1,71 +1,20 @@
-# phantom:
-#   ssl: false
-#   address: 35.246.188.155:443
-#   #header_http: "1.1"
-#   load_profile:
-#     load_type: rps # schedule load by defining requests per second
-#     schedule: const(1,30) line(1,100,1m) #const(3000,1m)
-# console:
-#   enabled: true # enable console output
-# telegraf:
-#   enabled: false # let's disable telegraf monitoring for the first time
-# overload:
-#   enabled: false
-#   package: yandextank.plugins.DataUploader
-# #   token_file: "token.txt"
-
-# phantom:
-#   address: 35.246.188.155:443
-#   load_profile:
-#     load_type: rps
-#     schedule: line(1, 10, 1m)
-#   header_http: "1.1"
-# #   headers:
-# #     - "[Host: www.target.example.com]"
-# #     - "[Connection: close]"
-# #   uris:
-# #     - "/uri1"
-# #     - "/buy"
-# #     - "/sdfg?sdf=rwerf"
-# #     - "/sdfbv/swdfvs/ssfsf"
-# console:
-#   enabled: true
-# telegraf:
-#   enabled: false
-# # ammo_type: uripost
-# 
-# phantom:
-# #   ssl: true
-#   header_http: "1.1"
-#   address: whoami.hovika.svrn.dev:443
-# 
-#   load_profile:
-#     load_type: rps
-#     schedule: line(1, 10,1m)
-# 
-# #   timeout: '60'
-#   instances: 1
-# 
-#   ammo_type: uripost
-#   ammofile: ammo.txt
-# telegraf:
-#     enabled: false
+URL:  ${TARGET_URL}
+ENABLE_SSL: ${ENABLE_SSL:false}
+THREADS: ${THREADS:150}
+RPS: ${RPS:40}
+DURATION: ${DURATION:60m}
 
 phantom:
-  instances: 130
+  instances: THREADS
 #   writelog: all
   timeout: 3m
   ammo_type: uripost
   header_http: "1.1"
- # address: www.whoami.hovika.svrn.dev:443 # [Target's address]:[target's port]
-  address: 35.246.246.5:9000
- # address: 34.107.68.40:8080
+  address: URL
   load_profile:
     load_type: rps # schedule load by defining requests per second
-#    schedule: line(10, 2000, 10m) const (2000, 30m)    
-    #schedule: line (1, 20, 3m) const(20, 60m)
-    schedule: line (1, 40, 3m) const(40, 90m)
-  ssl: false
+    schedule: line (1, RPS, 3m) const(RPS, DURATION)
+  ssl: ENABLE_SSL
 console:
   enabled: true # enable console output
 telegraf:
