@@ -1,0 +1,22 @@
+phantom:
+  instances: 2000
+#   writelog: all
+  timeout: 10s
+  ammo_type: uripost
+  header_http: "1.1"
+ # address: www.whoami.hovika.svrn.dev:443 # [Target's address]:[target's port]
+  address: 35.246.246.5:9000
+ # address: 34.107.68.40:8080
+  load_profile:
+    load_type: rps # schedule load by defining requests per second
+    schedule: line(10, 1500, 5m) const (1500, 60m)    
+#    schedule: line (1, 20, 3m) const(20, 60m)
+  ssl: false
+console:
+  enabled: true # enable console output
+telegraf:
+  enabled: false # let's disable telegraf monitoring for the first time
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
