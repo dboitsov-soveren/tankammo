@@ -1,17 +1,20 @@
+URL:  ${TARGET_URL}
+ENABLE_SSL: ${ENABLE_SSL:false}
+THREADS: ${THREADS:2000}
+RPS: ${RPS:1500}
+DURATION: ${DURATION:60m}
+
 phantom:
-  instances: 2000
+  instances: THREADS
 #   writelog: all
   timeout: 10s
   ammo_type: uripost
   header_http: "1.1"
- # address: www.whoami.hovika.svrn.dev:443 # [Target's address]:[target's port]
-  address: 35.246.246.5:9000
- # address: 34.107.68.40:8080
+  address: URL
   load_profile:
     load_type: rps # schedule load by defining requests per second
-    schedule: line(10, 1500, 5m) const (1500, 60m)    
-#    schedule: line (1, 20, 3m) const(20, 60m)
-  ssl: false
+    schedule: line(10, RPS, 5m) const (RPS, DURATION)
+  ssl: ENABLE_SSL
 console:
   enabled: true # enable console output
 telegraf:
