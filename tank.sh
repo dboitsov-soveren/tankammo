@@ -21,4 +21,6 @@ overload:
   package: yandextank.plugins.DataUploader
   token_file: "token.txt"' > load.yaml
 
+echo $TMPPATH
+
 yandex-tank -c load.yaml ${AMMO_FILE}
