@@ -1,6 +1,7 @@
 #! /bin/bash
 
 TMPPATH=$(echo $RANDOM | base64 | head -c 25)
+echo "Running update ammo"
 
 sed -i -e 's/randomPath/'${TMPPATH}'/g' ${AMMO_FILE}
 
@@ -19,5 +20,5 @@ console:
 overload:
   enabled: true
   package: yandextank.plugins.DataUploader
-  token_file: "token.txt"' > load2.yaml
-yandex-tank -c load2.yaml ${AMMO_FILE}
+  token_file: "token.txt"' > load.yaml
+yandex-tank -c load.yaml ${AMMO_FILE}
