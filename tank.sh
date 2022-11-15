@@ -1,9 +1,6 @@
 #! /bin/bash
 
-echo 'Starting data generation'
-
 TMPPATH=$(echo $RANDOM | base64 | head -c 25)
-
 sed -i -e 's/randomPath/'${TMPPATH}'/g' ${AMMO_FILE}
 
 echo 'phantom:
@@ -13,8 +10,8 @@ echo 'phantom:
   header_http: "1.1"
   address: '${URL}'
   load_profile:
-load_type: rps
-schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
+    load_type: rps
+    schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
   ssl: '${ENABLE_SSL}'
 console:
   enabled: true
