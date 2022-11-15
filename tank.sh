@@ -1,6 +1,7 @@
 #! /bin/bash
 
 TMPPATH=$(echo $RANDOM | base64 | head -c 25)
+
 sed -i -e 's/randomPath/'${TMPPATH}'/g' ${AMMO_FILE}
 
 echo 'phantom:
