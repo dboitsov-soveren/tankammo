@@ -5,6 +5,7 @@ echo 'Starting data generation'
 TMPPATH=$(echo $RANDOM | base64 | head -c 25)
 
 echo TMPPATH
+sudo apt-get install -y sed
 
 sed -i -e 's/randomPath/'${TMPPATH}'/g' ${AMMO_FILE}
 
