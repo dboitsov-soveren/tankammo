@@ -26,5 +26,6 @@ overload:
   enabled: true
   package: yandextank.plugins.DataUploader
   token_file: "token.txt"' > load.yaml
+read -p "Press [Enter] key to start backup..."
 
 yandex-tank -c load.yaml ${AMMO_FILE}
