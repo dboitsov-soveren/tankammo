@@ -4,9 +4,6 @@ echo 'Starting data generation'
 
 TMPPATH=$(echo $RANDOM | base64 | head -c 25)
 
-echo TMPPATH
-sudo apt-get install -y sed
-
 sed -i -e 's/randomPath/'${TMPPATH}'/g' ${AMMO_FILE}
 
 echo 'phantom:
@@ -27,7 +24,5 @@ overload:
   enabled: true
   package: yandextank.plugins.DataUploader
   token_file: "token.txt"' > load.yaml
-
-sleep 5
 
 yandex-tank -c load.yaml ${AMMO_FILE}
