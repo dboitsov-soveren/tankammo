@@ -7,4 +7,4 @@ git reset --hard origin/main
 chmod 777 ./tank.sh
 chmod 777 ./startLoad.sh
 
-echo ./startLoad.sh
+./startLoad.sh
