@@ -1,8 +1,16 @@
 #! /bin/bash
 
-TMPPATH=$(echo $RANDOM | base64 | head -c 25)
+echo "Pulling latest ammo and data"
+git fetch --all
+git reset --hard origin/main
 
+chmod 777 ./tank.sh
+
+echo "Updating ammo urls"
+TMPPATH=$(echo $RANDOM | base64 | head -c 25)
 sed -i -e 's/randomPath/'${TMPPATH}'/g' ${AMMO_FILE}
+
+echo "Preparing config and running tank"
 
 echo 'phantom:
   instances: '${THREADS}'
