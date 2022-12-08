@@ -16,7 +16,6 @@ echo 'phantom:
     load_type: rps
     schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
   ssl: '${ENABLE_SSL}'
-  loop: '${LOOP}'
 console:
   enabled: true
 telegraf:
