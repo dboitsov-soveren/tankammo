@@ -1,7 +1,7 @@
 [User-Agent: yandex-tank]
 [Accept: */*]
 [Cache-Control: no-cache]
-[Host: loadtest.svrn.dev]
+[Host: echo.smatdev.eks.svrn.dev]
 [Accept-Encoding: gzip, deflate, br]
 [Connection: close]
 [Content-Type: application/json]
