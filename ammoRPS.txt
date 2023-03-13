@@ -1,7 +1,7 @@
 [User-Agent: yandex-tank]
 [Accept: */*]
 [Cache-Control: no-cache]
-[Host: whoami.hovika.svrn.dev]
+[Host: echo.smatdev.eks.svrn.dev]
 [Accept-Encoding: gzip, deflate, br]
 [Connection: keep-alive]
 [Content-Type: application/json]
