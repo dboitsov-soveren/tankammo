@@ -1,7 +1,7 @@
 [User-Agent: PostmanRuntime/7.32.2]
 [Accept: */*]
 [Cache-Control: no-cache]
-[Host: stats.soveren.io:443]
+[Host: stats.soveren.io]
 [Accept-Encoding: gzip, deflate, br]
 [Connection: close]
 [Content-Type: application/json]
