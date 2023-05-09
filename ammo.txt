@@ -1,7 +1,7 @@
 [User-Agent: yandex-tank]
 [Accept: */*]
 [Cache-Control: no-cache]
-[Host: echo.smatdev.eks.svrn.dev]
+[Host: stats.soveren.io:443]
 [Accept-Encoding: gzip, deflate, br]
 [Connection: keep-alive]
 [Content-Type: application/json]
