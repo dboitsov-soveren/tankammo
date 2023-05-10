@@ -3,7 +3,7 @@
 [Cache-Control: no-cache]
 [Host: stats.stage2.svrn.dev]
 [Accept-Encoding: gzip, deflate, br]
-[Connection: close]
+[Connection: keep-alive]
 [Content-Type: application/json]
 
 [X-Token: 38ce1c76-2ac6-4776-b88c-16cd93b47667]
