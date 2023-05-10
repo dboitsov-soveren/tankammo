@@ -14,7 +14,7 @@ echo 'phantom:
   address: '${URL}'
   load_profile:
     load_type: rps
-    schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
+    schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}') const (1, '${DURATION}') const ('${RPS}', '${DURATION}') const (1, '${DURATION}')
   ssl: '${ENABLE_SSL}'
 console:
   enabled: true
