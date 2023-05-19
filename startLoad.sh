@@ -11,6 +11,11 @@ echo 'phantom:
   timeout: 10s
   ammo_type: uripost
   header_http: "1.1"
+  address: a9f9684208c7946e09ace815dcf598df-1b9147536e3097a4.elb.eu-west-1.amazonaws.com:9000
+  load_profile:
+    load_type: rps
+    schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
+  ssl: '${ENABLE_SSL}'
   multi:
     - address: a197f77c4251845adab0de156debbf78-328989716.eu-west-1.elb.amazonaws.com:9000
       load_profile:
@@ -21,11 +26,6 @@ echo 'phantom:
       load_profile:
         load_type: rps
         schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
-      ssl: '${ENABLE_SSL}'
-    - address: a9f9684208c7946e09ace815dcf598df-1b9147536e3097a4.elb.eu-west-1.amazonaws.com:9000
-      load_profile:
-         load_type: rps
-         schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
       ssl: '${ENABLE_SSL}'
 console:
   enabled: true
