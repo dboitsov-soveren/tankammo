@@ -11,7 +11,7 @@ echo 'phantom:
   timeout: 10s
   ammo_type: uripost
   header_http: "1.1"
-  address: a9f9684208c7946e09ace815dcf598df-1b9147536e3097a4.elb.eu-west-1.amazonaws.com:9000
+  address: '${URL}'
   load_profile:
     load_type: rps
     schedule: line(1, '${RPS}', '${WARMUP}') const ('${RPS}', '${DURATION}')
