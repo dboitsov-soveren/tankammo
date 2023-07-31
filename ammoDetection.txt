@@ -1,0 +1,9 @@
+[User-Agent: yandex-tank]
+[Accept: */*]
+[Cache-Control: no-cache]
+[Host: soveren-agent-testing-detection-tool]
+[Connection: close]
+[Content-Type: application/json]
+
+80 /api/v2/detect
+{"body": "{\"user\": {\"name\": \"Dan Brown\", \"phone\": \"425-276-6296\"}}", "url": ""}
