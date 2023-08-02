@@ -2,7 +2,7 @@
 [Accept: */*]
 [Cache-Control: no-cache]
 [Host: soveren-agent-testing-detection-tool]
-[Connection: close]
+[Connection: keep-alive]
 [Content-Type: application/json]
 
 89 /api/v2/detect

@@ -8,7 +8,7 @@ echo "Preparing config and running tank"
 
 echo 'phantom:
   instances: '${THREADS}'
-  timeout: 10s
+  timeout: 60s
   ammo_type: uripost
   header_http: "1.1"
   address: '${URL}'
