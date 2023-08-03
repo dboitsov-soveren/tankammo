@@ -1,0 +1,9 @@
+[User-Agent: yandex-tank]
+[Accept: */*]
+[Cache-Control: no-cache]
+[Host: soveren-agent-testing-detection-tool]
+[Connection: keep-alive]
+[Content-Type: application/json]
+
+26 /api/v2/detect
+{"body": "{\"test\": true}
